@@ -92,7 +92,7 @@ Vagrant.configure("2") do |config|
     master.vm.provider :virtualbox do |v|
       v.name = "vm-cluster-node1"
 	  v.cpus = 4
-	  v.memory = 8192
+	  v.memory = 4096
     end
     master.vm.network :private_network, ip: "10.211.55.100"
     master.vm.hostname = "vm-cluster-node1"
@@ -143,17 +143,17 @@ Vagrant.configure("2") do |config|
   #############################################
   ## INIZIO VM SLAVE3                        ##
   #############################################
-  config.vm.define :slave3 do |slave3|
-    slave3.vm.provider :virtualbox do |v|
-      v.name = "vm-cluster-node4"
-	  v.cpus = 2
-	  v.memory = 2048
-    end
-    slave3.vm.network :private_network, ip: "10.211.55.103"
-    slave3.vm.hostname = "vm-cluster-node4"
-    slave3.vm.provision :shell, :inline => $hosts_script
-    slave3.vm.provision :hostmanager
-  end
+  # config.vm.define :slave3 do |slave3|
+  #   slave3.vm.provider :virtualbox do |v|
+  #     v.name = "vm-cluster-node4"
+  # 	  v.cpus = 2
+  # 	  v.memory = 2048
+  # end
+  #  slave3.vm.network :private_network, ip: "10.211.55.103"
+  #  slave3.vm.hostname = "vm-cluster-node4"
+  #  slave3.vm.provision :shell, :inline => $hosts_script
+  #  slave3.vm.provision :hostmanager
+  #end
   #############################################
   ## FINE   VM SLAVE3                        ##
   #############################################
